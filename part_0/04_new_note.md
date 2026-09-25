@@ -3,7 +3,7 @@ sequenceDiagram
 participant browser
 participant server
 
-	browse->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+	browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
 	activate server
 	server-->>browser: URL redirection message
 	deactivate server
