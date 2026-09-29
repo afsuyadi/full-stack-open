@@ -1,16 +1,19 @@
+const Part = ({part}) => {
+        return (
+            <p>
+                {part.part} {part.exercise}
+            </p>
+        )
+    }
+
 const Content = ({ parts }) => {
+    
     return (
-        <>
-        <p>
-            {parts[0].part1} {parts[0].exercises1}
-        </p>
-        <p>
-            {parts[1].part2} {parts[1].exercises2}
-        </p>
-        <p>
-            {parts[2].part3} {parts[2].exercises3}
-        </p>
-        </>
+        <div>
+            <Part part={parts[0]}/>
+            <Part part={parts[1]}/>
+            <Part part={parts[2]}/>
+        </div>
     )
 }
 
