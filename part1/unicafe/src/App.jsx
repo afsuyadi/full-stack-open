@@ -9,16 +9,16 @@ const Statistics = ({props}) => {
   const average = props.average
   const positive = props.positive
   return (
-    <div>
-      <h1>statisics</h1>
+      good || neutral || bad ? <div>
       <p>good {good}</p>
       <p>neutral {neutral}</p>
       <p>bad {bad}</p>
       <p>all {total}</p>
       <p>average {isNaN(average) ? 0 : average}</p>
       <p>positive {isNaN(positive) ? 0 : positive} %</p>
-    </div>
-  )
+
+  </div> :
+  <p>No feedback given</p>) 
 }
 const App = () => {
   // save clicks of each button to its own state
@@ -44,6 +44,7 @@ const App = () => {
       <button>neutral</button>
       <button>bad</button>
 
+      <h1>statisics</h1>
       <Statistics props={props}/>
     </div>
   )
