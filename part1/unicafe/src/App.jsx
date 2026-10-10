@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
-const StatisticsLine = ({text, value}) => {
+const StatisticLine = ({text, value}) => {
   return (
     <div>
-      <p>{text} {value}</p>
+      <p>{text} {value} {text === "average" | text === "positive" ? '%' : ''}</p>
     </div>
   )
 }
 const Statistics = ({props}) => {
-  console.log(props)
+  console.log('PROPS', props)
   const good = props.good
   const neutral = props.neutral
   const bad = props.bad
@@ -43,13 +43,25 @@ const App = () => {
     average: average,
     positive: positive
   }
+  const increaseGood = () => {
+    const newGood = good + 1
+    setGood(newGood)
+  }
+  const increaseNeutral = () => {
+    const newNeutral = neutral + 1
+    setNeutral(newNeutral)
+  }
+  const increaseBad = () => {
+    const newBad = bad + 1
+    setBad(newBad)
+  }
 
   return (
     <div>
       <h1>give feedback</h1>
-      <button>good</button>
-      <button>neutral</button>
-      <button>bad</button>
+      <button onClick={increaseGood}>good</button>
+      <button onClick={increaseNeutral}>neutral</button>
+      <button onClick={increaseBad}>bad</button>
 
       <h1>statisics</h1>
       <Statistics props={props}/>
